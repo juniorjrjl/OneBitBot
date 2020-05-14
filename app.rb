@@ -14,8 +14,8 @@ class App < Sinatra::Base
 
     post '/webhock' do
         request.body.rewind
-        result = JSON.parse(request.body.read)["queryResult"]
-        p JSON.parse(request.body.read)
+        result = JSON.parse(request.body.read)#["queryResult"]
+        p result
         if result["contexts"].present?
             response = InterpretService.call(result["action"], result["context"][0]["parameters"])
         else
