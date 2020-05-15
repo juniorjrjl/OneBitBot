@@ -22,7 +22,7 @@ module FaqModule
             end
 
             response = "Perguntas e Respostas \n\n"
-                .each do |f|
+                faqs.each do |f|
                 response += "*#{f.id}* - "
                 response += "*#{f.question}*\n"
                 response += "'#{f.answer}' \n"
